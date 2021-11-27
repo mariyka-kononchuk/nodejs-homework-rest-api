@@ -8,7 +8,7 @@ const addContact = async ({ name, email, phone }) => {
   const newContact = { name, email, phone, id: v4() }
   contacts.push(newContact)
   await fs.writeFile(contactsPath, JSON.stringify(contacts))
-  return contacts
+  return newContact
 }
 
 module.exports = addContact
