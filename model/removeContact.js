@@ -8,9 +8,9 @@ const removeContact = async (contactId) => {
   if (index === -1) {
     return null
   }
-  contacts.splice(index, 1)
+  const [removedContact] = contacts.splice(index, 1)
   await fs.writeFile(contactsPath, JSON.stringify(contacts))
-  return contacts
+  return [removedContact]
 }
 
 module.exports = removeContact
