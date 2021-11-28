@@ -1,5 +1,5 @@
 
-const contactsOperations = require('../../model')
+const contactsOperations = require('../../model/contacts')
 const createError = require('http-errors')
 
 const removeById = async (req, res) => {
