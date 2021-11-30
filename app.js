@@ -1,11 +1,11 @@
-// Demkonn19610720
-// mongodb+srv://Maria:Demkonn19610720@cluster0.d1ssi.mongodb.net/test
 const mongoose = require('mongoose')
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 const dotenv = require('dotenv')
+
 dotenv.config()
+
 const { DB_HOST } = process.env
 
 mongoose.connect(DB_HOST)
