@@ -4,8 +4,8 @@ const mongoose = require('mongoose')
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
+const { DB_HOST } = require('./config')
 
-const DB_HOST = 'mongodb+srv://Maria:Demkonn19610720@cluster0.d1ssi.mongodb.net/node?retryWrites=true&w=majority'
 mongoose.connect(DB_HOST)
   .then(() => console.log('Database connection successful'))
   .catch(error => {
