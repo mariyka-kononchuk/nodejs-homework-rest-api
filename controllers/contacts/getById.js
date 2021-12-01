@@ -3,7 +3,7 @@ const { Contact } = require('../../models')
 
 const getById = async (req, res) => {
   const { contactId } = req.params
-  const result = await contactsOperations.getContactById(contactId)
+  const result = await Contact.findById(contactId)
   if (!result) {
     throw createError(404, `Contact with id:${contactId} not found`)
   }
@@ -12,7 +12,7 @@ const getById = async (req, res) => {
     code: 200,
     message: `Contact with id:${contactId} found`,
     data: {
-      result: result
+      result
     }
   })
 }
