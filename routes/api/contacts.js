@@ -9,12 +9,12 @@ const { contacts: controller } = require('../../controllers')
 
 router.get('/', controllerWrapper(controller.getAll))
 
-// router.get('/:contactId', controllerWrapper(controller.getById))
+router.get('/:contactId', controllerWrapper(controller.getById))
 
-// router.post('/', validation(joiSchema), controllerWrapper(controller.add))
+router.post('/', validation(joiSchema), controllerWrapper(controller.add))
 
-// router.delete('/:contactId', controllerWrapper(controller.removeById))
+router.delete('/:contactId', controllerWrapper(controller.removeById))
 
-// router.put('/:contactId', validation(joiSchema), controllerWrapper(controller.updateById))
+router.put('/:contactId', validation(joiSchema), controllerWrapper(controller.updateById))
 
 module.exports = router
