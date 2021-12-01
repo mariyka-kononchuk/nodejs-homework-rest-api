@@ -24,7 +24,6 @@ const joiSchema = Joi.object({
   email: Joi.string().required(),
   phone: Joi.string().required(),
   favorite: Joi.bool()
-
 })
 
 const Contact = model('contact', contactSchema)
