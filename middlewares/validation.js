@@ -8,6 +8,6 @@ const validation = (scheme) => {
     }
     next()
   }
-}
+};
 
-module.exports = validation
+module.exports = validation;
