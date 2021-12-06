@@ -6,6 +6,6 @@ const controllerWrapper = (controller) => {
       next(error)
     }
   }
-}
+};
 
-module.exports = controllerWrapper
+module.exports = controllerWrapper;
