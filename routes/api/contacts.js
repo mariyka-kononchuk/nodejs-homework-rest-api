@@ -5,8 +5,6 @@ const { validation, controllerWrapper } = require('../../middlewares');
 const { joiSchema, statusJoiSchema } = require('../../models/contact');
 const { contacts: controller } = require('../../controllers');
 
-// const validateMiddleWare = validation(contactScheme)
-
 router.get('/', controllerWrapper(controller.getAll));
 
 router.get('/:contactId', controllerWrapper(controller.getById));
