@@ -5,8 +5,9 @@ const { User } = require('../models');
 const { SECRET_KEY } = process.env;
 
 const auth = async (req, res, next) => {
-    const { authorization = ''} = req.headers;
-    const [bearer, token] = authorization.split(' ');
+    console.log("req.user");
+    const { authorization = ""} = req.headers;
+    const [bearer, token] = authorization.split(" ");
     
     try {
         if (bearer !== "Bearer") {
@@ -20,6 +21,7 @@ const auth = async (req, res, next) => {
         req.user = user;
         next();
     } catch (error) {
+        console.log("req.user");
         if (error.message = 'Invalid signature') {
             error.status = 401;
         };
