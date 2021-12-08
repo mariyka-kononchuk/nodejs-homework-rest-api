@@ -17,4 +17,6 @@ router.put('/:contactId', validation(joiSchema), controllerWrapper(controller.up
 
 router.patch('/:contactId/favorite', validation(statusJoiSchema), controllerWrapper(controller.updateStatusContact));
 
+
+
 module.exports = router;
