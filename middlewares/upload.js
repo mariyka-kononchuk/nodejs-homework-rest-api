@@ -1,8 +1,8 @@
 const multer = require('multer');
 const path = require('path');
+const Jimp = require('jimp');
 
 const tempDir = path.join(__dirname, '../', 'temp');
-// const avatarsDir = path.join(__dirname, 'public', 'avatars');
 
 const multerConfig = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -21,3 +21,16 @@ const upload = multer({
 })
 
 module.exports = upload;
+
+// Jimp.read(tempDir)
+//         .then(image => {
+//             image.resize(250, 250) 
+//             image.write(imageName);
+//         })
+//   .catch(err => {
+//           error
+//         });
+
+   
+
+
