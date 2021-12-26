@@ -1,6 +1,7 @@
 const { NotFound } = require('http-errors');
+const { nanoid } = require('nanoid');
 const { User } = require('../../models');
-const { verifyEmail } = require('./verifyEmail');
+const { sendEmail } = require('../../utils');
 const createError = require('http-errors');
 
 const resendEmail = async (req, res) => {
@@ -10,7 +11,25 @@ const resendEmail = async (req, res) => {
         throw createError(400, `Missing required field email`);
     }
     const user = await User.findOne({ email });
-    verifyEmail();
+
+    if (user.verify === 'true') {
+        throw createError(400, 'Verification has already been passed')
+    }
+
+    const verificationToken = 'aaass123457891111';
+
+    const mail = {
+        to: email,
+        subject: 'Confirm email',
+        html:`<a target="_blank" href="http://localhost:3000/api/users/verify/${verificationToken}"><Confirm email/a>`
+    }
+
+    await sendEmail(mail);
+
+    res.status(200).json({
+        code: 200,
+        message: 'Verification email sent'
+    })
 
 }
 
