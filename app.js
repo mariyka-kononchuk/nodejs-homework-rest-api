@@ -3,6 +3,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+//чтоб данные из .env попали в переменное окружение
 dotenv.config();
 
 const usersRouter = require('./routes/api/users');
