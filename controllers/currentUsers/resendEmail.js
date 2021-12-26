@@ -16,7 +16,7 @@ const resendEmail = async (req, res) => {
         throw createError(400, 'Verification has already been passed')
     }
 
-    const verificationToken = 'aaass123457891111';
+    const verificationToken = nanoid();
 
     const mail = {
         to: email,
