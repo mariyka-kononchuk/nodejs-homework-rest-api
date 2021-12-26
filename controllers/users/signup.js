@@ -16,7 +16,8 @@ const signup = async (req, res) => {
     
     const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
-    const verificationToken = nanoid();
+    const verificationToken = 'aaass12345789';
+        //nanoid();
 
     const result = await User.create({ name, email, password: hashPassword, avatarURL, verificationToken  });
 
